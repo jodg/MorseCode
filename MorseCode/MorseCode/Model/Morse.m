@@ -192,9 +192,9 @@
 {
     self.morse_code = @"";
     if ([self.text length] > 0) {
-        BOOL end = NO;
         NSString *space,*c;
         NSDictionary *morseDic = [self morseDic];
+        
         for (int i = 0; i < [self.text length]; i++) {
             NSString *s = [self.text substringWithRange:NSMakeRange(i, 1)];
             c = space = @"";
@@ -204,16 +204,14 @@
                 space = self.morse_space;
             }else if([s isEqualToString:@" "]){
                 c = self.text_space;
-                end = YES;
             }
+            
             if (c) {
                 self.morse_code = [self.morse_code stringByAppendingFormat:@"%@%@",space,c];
             }
         }
         
-        if([[self.morse_code
-             substringWithRange:NSMakeRange(0, 1)]
-            isEqualToString:self.morse_space]){
+        if([self.morse_code length] > 0 && [[self.morse_code substringWithRange:NSMakeRange(0, 1)]isEqualToString:self.morse_space]){
             self.morse_code = [self.morse_code substringFromIndex:1];
         }
     }
@@ -282,13 +280,13 @@
             if([s isEqualToString:self.morse_space]){
                 if ([worldDic objectForKey:c]) {
                     match = [worldDic objectForKey:c];
-                    self.append_letter_morse_code = [self.append_letter_morse_code stringByAppendingFormat:@"( %@ )%@", match,s];
+                    self.append_letter_morse_code = [self.append_letter_morse_code stringByAppendingFormat:@"( %@ )", match];
                 }
                 c = @"";
             }else if ([s isEqualToString:self.text_space]) {
                 if ([worldDic objectForKey:c]) {
                     match = [worldDic objectForKey:c];
-                    self.append_letter_morse_code = [self.append_letter_morse_code stringByAppendingFormat:@"( %@ )%@", match,s];
+                    self.append_letter_morse_code = [self.append_letter_morse_code stringByAppendingFormat:@"( %@ )", match];
                 }
                 c = @"";
             }else{
@@ -318,7 +316,7 @@
     }
 }
 
--(void) morseToLight:(id)sender selectorOn:(SEL)selectorOn selectorOff:(SEL)selectorOff
+-(void) morseToLight:(id)sender selectorOn:(SEL)selectorOn selectorOff:(SEL)selectorOff selectorFinished:(SEL)selectorFinished
 {
     float totle_time;
     totle_time = 0.0;
@@ -353,6 +351,9 @@
                 [self.time addObject:[NSTimer scheduledTimerWithTimeInterval:totle_time target:sender selector:selectorOff userInfo:nil repeats:NO]];
             }
             totle_time += self.unit;
+        }
+        if (sender) {
+            [self.time addObject:[NSTimer scheduledTimerWithTimeInterval:totle_time target:sender selector:selectorFinished userInfo:nil repeats:NO]];
         }
     }
 }

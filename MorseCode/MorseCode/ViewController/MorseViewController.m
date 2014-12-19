@@ -53,6 +53,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [[self morse_code]setEditable:NO];
+//    self.morse_code.canCancelContentTouches = NO;
+    
     self.font_size = 24;
     self.light_flag = NO;
     self.append_letter = YES;
@@ -110,7 +112,7 @@
         [self resetLight];
     }else{
         self.light_flag = YES;
-        [self.morse morseToLight:self selectorOn:@selector(changeLightImgOn) selectorOff:@selector(changeLightImgOff)];
+        [self.morse morseToLight:self selectorOn:@selector(changeLightImgOn) selectorOff:@selector(changeLightImgOff) selectorFinished:@selector(lightSendFinished)];
     }
     
 }
@@ -119,6 +121,11 @@
 {
     self.light_flag = NO;
     [self.morse stopLight:self selectorOff:@selector(changeLightImgOff)];
+}
+
+-(void)lightSendFinished{
+    self.light_flag = NO;
+    [self changeLightImgOff];
 }
 
 -(void)changeLightImgOff
@@ -192,6 +199,7 @@
 -(void)showMorseText
 {
     [self butedMorseText];
+//    [[self morse_code]scrollRangeToVisible:self.morse_code.selectedRange];
     self.morse_code.attributedText = self.morse_text_buted;
 }
 
@@ -212,7 +220,8 @@
             
             self.morse_text_buted = [[NSMutableAttributedString alloc]initWithString:self.morse.append_letter_morse_code attributes:attrs_dic];
             if ([array_match count] > 0) {
-                NSDictionary *word_attrs_Dic = @{NSForegroundColorAttributeName: [UIColor whiteColor],
+                NSDictionary *word_attrs_Dic = @{
+                                                 //NSForegroundColorAttributeName: [UIColor whiteColor],
                                                  //                                       NSBackgroundColorAttributeName: [UIColor whiteColor],
                                                  NSFontAttributeName:[UIFont systemFontOfSize:16]
                                                  };
