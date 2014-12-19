@@ -11,13 +11,13 @@
 
 @interface Morse : NSObject
 @property   (strong,nonatomic) NSString *text;
-@property   (strong,nonatomic) NSString *morse_code;
-@property   (strong,nonatomic) NSString *append_letter_morse_code;
-@property   (strong,nonatomic) NSString *morse_space;   //single string
-@property   (strong,nonatomic) NSString *text_space;    //single string
+@property   (strong,nonatomic) NSString *morseCode;
+@property   (strong,nonatomic) NSString *appendLetterMorseCode;
+@property   (strong,nonatomic) NSString *morseSpace;   //single string
+@property   (strong,nonatomic) NSString *textSpace;    //single string
 @property   (nonatomic) float unit;
-@property   (nonatomic) NSUInteger unit_input;
-@property   (nonatomic) NSUInteger range_unit_input;
+@property   (nonatomic) NSUInteger unitInput;
+@property   (nonatomic) NSUInteger rangeUnitInput;
 
 -(instancetype)init;
 -(NSString *)textToMorseCode;
