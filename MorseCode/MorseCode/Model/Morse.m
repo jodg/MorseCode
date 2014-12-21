@@ -339,7 +339,7 @@
             
             if (!off) {
                 [self.time addObject:[NSTimer scheduledTimerWithTimeInterval:totleTime target:led selector:@selector(turnOnLed) userInfo:nil repeats:NO]];
-                if (sender) {
+                if ([sender respondsToSelector:selectorOn]) {
                     [self.time addObject:[NSTimer scheduledTimerWithTimeInterval:totleTime target:sender selector:selectorOn userInfo:nil repeats:NO]];
                 }
                 
@@ -347,12 +347,12 @@
             
             totleTime += time;
             [self.time addObject:[NSTimer scheduledTimerWithTimeInterval:totleTime target:led selector:@selector(turnOffLed) userInfo:nil repeats:NO]];
-            if (sender) {
+            if ([sender respondsToSelector:selectorOff]) {
                 [self.time addObject:[NSTimer scheduledTimerWithTimeInterval:totleTime target:sender selector:selectorOff userInfo:nil repeats:NO]];
             }
             totleTime += self.unit;
         }
-        if (sender) {
+        if ([sender respondsToSelector:selectorFinished]) {
             [self.time addObject:[NSTimer scheduledTimerWithTimeInterval:totleTime target:sender selector:selectorFinished userInfo:nil repeats:NO]];
         }
     }
@@ -366,7 +366,9 @@
         }
         self.time = nil;
         [[[Led alloc]init]turnOffLed];
-        [sender performSelector:selectorOff];
+        if ([sender respondsToSelector:selectorOff]) {
+            [sender performSelector:selectorOff];
+        }
     }
 }
 

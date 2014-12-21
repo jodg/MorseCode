@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--Morse-->
+        <!--Console-->
         <scene sceneID="PMz-sI-e4q">
             <objects>
                 <viewController id="cfQ-1g-Jdf" customClass="MorseViewController" sceneMemberID="viewController">
@@ -126,7 +126,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Morse" image="terminal" id="N67-bf-jMK"/>
+                    <tabBarItem key="tabBarItem" title="Console" image="terminal" id="N67-bf-jMK"/>
                     <connections>
                         <outlet property="light" destination="7gL-EQ-Pvc" id="pHg-ek-Maw"/>
                         <outlet property="morseCode" destination="kuS-A4-Tjs" id="AyU-Da-sQw"/>
@@ -190,8 +190,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lKw-JT-xcK" id="4uy-fj-lth">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Morse" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="m2K-R2-bCF">
-                                                    <rect key="frame" x="22" y="11" width="49" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Morse Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="m2K-R2-bCF">
+                                                    <rect key="frame" x="22" y="11" width="95" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -235,7 +235,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="input dit &quot;.&quot;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nIZ-iY-5Rf">
-                                                    <rect key="frame" x="56" y="0.0" width="264" height="40"/>
+                                                    <rect key="frame" x="56" y="3.5" width="264" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -255,7 +255,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="input dah &quot;-&quot;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3m1-2M-GqT">
-                                                    <rect key="frame" x="56" y="0.0" width="264" height="40"/>
+                                                    <rect key="frame" x="56" y="3.5" width="264" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -275,7 +275,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="delete" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="acn-mn-9fI">
-                                                    <rect key="frame" x="56" y="0.0" width="264" height="40"/>
+                                                    <rect key="frame" x="56" y="3.5" width="264" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -295,7 +295,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="send morse code by flash" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5o1-qy-5NP">
-                                                    <rect key="frame" x="56" y="0.0" width="264" height="40"/>
+                                                    <rect key="frame" x="56" y="3.5" width="264" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -315,7 +315,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="input letter space" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R40-9i-gdA">
-                                                    <rect key="frame" x="56" y="0.0" width="264" height="40"/>
+                                                    <rect key="frame" x="56" y="3.5" width="264" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -335,7 +335,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="input word space" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eDE-ho-BCj">
-                                                    <rect key="frame" x="56" y="0.0" width="264" height="40"/>
+                                                    <rect key="frame" x="56" y="3.5" width="264" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -355,7 +355,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reset" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="s3a-r0-sB3">
-                                                    <rect key="frame" x="56" y="0.0" width="264" height="41"/>
+                                                    <rect key="frame" x="56" y="2.5" width="264" height="41"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -413,7 +413,7 @@
             </objects>
             <point key="canvasLocation" x="4" y="1717"/>
         </scene>
-        <!--Morse-->
+        <!--Morse Code-->
         <scene sceneID="ZCj-Tk-Sfr">
             <objects>
                 <tableViewController id="8vH-xN-oq7" sceneMemberID="viewController">
@@ -444,17 +444,17 @@
                             <outlet property="delegate" destination="8vH-xN-oq7" id="NBj-fa-O6p"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Morse" id="Dyn-5x-Hep"/>
+                    <navigationItem key="navigationItem" title="Morse Code" id="Dyn-5x-Hep"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FTP-bj-lYO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="520" y="1717"/>
         </scene>
-        <!--More-->
+        <!--Navigation Controller-->
         <scene sceneID="SlA-NU-Gaw">
             <objects>
                 <navigationController id="EdF-pn-dhm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="More" image="more" id="hdz-9u-geS"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="hdz-9u-geS"/>
                     <navigationItem key="navigationItem" id="RU7-DI-mg5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PX4-Zg-eWn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -474,7 +474,6 @@
         <image name="dah" width="32" height="32"/>
         <image name="delete" width="24" height="24"/>
         <image name="flash_light_filled" width="512" height="512"/>
-        <image name="more" width="32" height="32"/>
         <image name="morse_code" width="446" height="562"/>
         <image name="morse_space" width="32" height="32"/>
         <image name="reload" width="32" height="32"/>
