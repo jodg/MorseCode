@@ -73,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C7D53B081A47BD2E004A7BE3 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				C7D84E231A43164D005510B0 /* AudioToolbox.framework */,
+			);
+			name = framework;
+			sourceTree = "<group>";
+		};
 		C7D84E1B1A4314B4005510B0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,10 +104,10 @@
 		C7DFAD1A1A42B35C006A8283 = {
 			isa = PBXGroup;
 			children = (
-				C7D84E231A43164D005510B0 /* AudioToolbox.framework */,
 				C7DFAD251A42B35C006A8283 /* MorseCode */,
 				C7DFAD3F1A42B35C006A8283 /* MorseCodeTests */,
 				C7DFAD241A42B35C006A8283 /* Products */,
+				C7D53B081A47BD2E004A7BE3 /* framework */,
 			);
 			sourceTree = "<group>";
 		};
