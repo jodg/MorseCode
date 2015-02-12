@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MorseToTextViewController : UIViewController
+@interface MorseToTextViewController : UIViewController <UITextViewDelegate>
 
 @end

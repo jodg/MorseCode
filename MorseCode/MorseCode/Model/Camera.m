@@ -8,6 +8,11 @@
 
 #import "Camera.h"
 
+@interface Camera()
+
+
+@end
+
 @implementation Camera
 
 @end

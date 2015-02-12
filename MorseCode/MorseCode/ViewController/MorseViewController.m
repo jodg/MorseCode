@@ -12,14 +12,14 @@
 
 @interface MorseViewController ()
 
-@property (strong, nonatomic) IBOutlet UITextView *morseCode;
-@property (strong, nonatomic) UITextView *tempText;
+@property (weak, nonatomic) IBOutlet UITextView *morseCode;
+@property (weak, nonatomic) UITextView *tempText;
 @property (weak, nonatomic) IBOutlet UIButton *light;
-@property (strong, nonatomic) IBOutlet UITextView *userText;
+@property (weak, nonatomic) IBOutlet UITextView *userText;
 @property (strong, nonatomic) Morse *morse;
 
-@property (strong,nonatomic) NSString *morseSpace;   //single string
-@property (strong,nonatomic) NSString *textSpace;   //single string
+@property (weak,nonatomic) NSString *morseSpace;   //single string
+@property (weak,nonatomic) NSString *textSpace;   //single string
 @property (strong,nonatomic) NSMutableAttributedString *morseTextButed;
 @property UInt64 unitTime;
 @property BOOL lightFlag;
@@ -112,7 +112,7 @@
         [self resetLight];
     }else{
         self.lightFlag = YES;
-        [self.morse morseToLight:self selectorOn:@selector(changeLightImgOn) selectorOff:@selector(changeLightImgOff) selectorFinished:@selector(lightSendFinished)];
+        [self.morse morseToLight:self selectorOn:@selector(changeLightImgOn) selectorOff:@selector(changeLightImgOff) selectorFinished:@selector(lightSendFinished) waitTime:0.0];
     }
     
 }

@@ -23,7 +23,7 @@
 -(NSString *)textToMorseCode;
 -(NSString *)MorseCodeToText;
 -(void)morseToSound;
--(void)morseToLight:(id)sender selectorOn:(SEL)selectorOn selectorOff:(SEL)selectorOff selectorFinished:(SEL)selectorFinished;
+-(void)morseToLight:(id)sender selectorOn:(SEL)selectorOn selectorOff:(SEL)selectorOff selectorFinished:(SEL)selectorFinished waitTime:(float)waitTime;
 -(void)stopLight:(id)sender selectorOff:(SEL)selectorOff;
 -(void)down;
 -(void)up;

@@ -8,7 +8,7 @@
 
 
 #import "Morse.h"
-#import "Led.h"
+//#import "Led.h"
 
 @interface Morse()
 @property   (strong,nonatomic)  NSMutableArray *time;
@@ -16,6 +16,7 @@
 @property   (nonatomic) uint64_t waitTime;
 @property   (nonatomic) uint64_t unitTime;
 @property   (strong,nonatomic)  NSString *lastMatch;
+//@property   (strong,nonatomic)  Led *led;
 @end
 
 @implementation Morse
@@ -25,7 +26,9 @@
     self = [super init];
     self.unit = 0.4;
     self.unitInput = self.unit * 1000;
-    self.rangeUnitInput = self.unit/2*1000;
+    self.unitTime = self.unitInput;
+    self.rangeUnitInput = self.unit* 0.2f *1000;
+//    self.led = [[Led alloc]init];
     return self;
 }
 
@@ -34,10 +37,11 @@
     self.lastMatch = @"";
     self.waitTime = 0;
     self.sendTime = 0;
-    self.unitTime = 0;
+//    self.unitTime = 0;
     self.morseCode = @"";
     self.lastMatch = @"";
     self.text = @"";
+    self.time = nil;
 }
 
 -(NSMutableArray *)time
@@ -122,7 +126,7 @@
     NSString *match;
     self.sendTime = [self sysTime] - self.sendTime;
     self.waitTime = [self sysTime];
-    [self countUnit];
+//    [self countUnit];
     
     match = [self matchMorseChat];
     if (match) {
@@ -316,37 +320,45 @@
     }
 }
 
--(void) morseToLight:(id)sender selectorOn:(SEL)selectorOn selectorOff:(SEL)selectorOff selectorFinished:(SEL)selectorFinished
+-(void) morseToLight:(id)sender selectorOn:(SEL)selectorOn selectorOff:(SEL)selectorOff selectorFinished:(SEL)selectorFinished waitTime:(float)waitTime
 {
     float totleTime;
-    totleTime = 0.0;
+    totleTime = waitTime;
     if ([self.morseCode length] > 0) {
         float time;
         NSString *s;
-        BOOL off,skip;
-        Led *led = [[Led alloc]init];
+        BOOL off,skip,fristLight;
+//        Led *led = [[Led alloc]init];
         NSDictionary *morseTimeDic = [self morseTimeDic];
         skip = NO;
+        fristLight = YES;
         for (int i = 0; i < [self.morseCode length]; i++) {
             time = 0.0;
             off = NO;
             s = [self.morseCode substringWithRange:NSMakeRange(i, 1)];
             
             time = [[morseTimeDic objectForKey:s]floatValue];
-            if ([s isEqualToString:self.morseSpace]) {
+            if ([s isEqualToString:self.morseSpace] || [s isEqualToString:self.textSpace]) {
                 off = YES;
             }
             
             if (!off) {
-                [self.time addObject:[NSTimer scheduledTimerWithTimeInterval:totleTime target:led selector:@selector(turnOnLed) userInfo:nil repeats:NO]];
-                if ([sender respondsToSelector:selectorOn]) {
-                    [self.time addObject:[NSTimer scheduledTimerWithTimeInterval:totleTime target:sender selector:selectorOn userInfo:nil repeats:NO]];
+                if (fristLight && waitTime < 0.001) {
+                    if ([sender respondsToSelector:selectorOn]) {
+                        [sender performSelector:selectorOn];
+                    }
+                    fristLight = NO;
+                }else{
+                    //                [self.time addObject:[NSTimer scheduledTimerWithTimeInterval:totleTime target:led selector:@selector(turnOnLed) userInfo:nil repeats:NO]];
+                    if ([sender respondsToSelector:selectorOn]) {
+                        [self.time addObject:[NSTimer scheduledTimerWithTimeInterval:totleTime target:sender selector:selectorOn userInfo:nil repeats:NO]];
+                    }
                 }
-                
+
             }
             
             totleTime += time;
-            [self.time addObject:[NSTimer scheduledTimerWithTimeInterval:totleTime target:led selector:@selector(turnOffLed) userInfo:nil repeats:NO]];
+//            [self.time addObject:[NSTimer scheduledTimerWithTimeInterval:totleTime target:led selector:@selector(turnOffLed) userInfo:nil repeats:NO]];
             if ([sender respondsToSelector:selectorOff]) {
                 [self.time addObject:[NSTimer scheduledTimerWithTimeInterval:totleTime target:sender selector:selectorOff userInfo:nil repeats:NO]];
             }
@@ -365,7 +377,8 @@
             [time invalidate];
         }
         self.time = nil;
-        [[[Led alloc]init]turnOffLed];
+//        [[[Led alloc]init]turnOffLed];
+//        [self.led turnOffLed];
         if ([sender respondsToSelector:selectorOff]) {
             [sender performSelector:selectorOff];
         }

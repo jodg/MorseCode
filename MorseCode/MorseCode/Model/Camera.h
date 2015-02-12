@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface Camera : NSObject
+@interface Camera : NSObject <AVCaptureVideoDataOutputSampleBufferDelegate>
 
 @end

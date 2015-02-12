@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TextToMorseViewController : UIViewController
+@interface TextToMorseViewController : UIViewController <UITextViewDelegate>
+
+-(void)changeLightImgOff;
+-(void)changeLightImgOn;
 
 @end

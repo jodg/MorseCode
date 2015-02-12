@@ -7,7 +7,29 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface CameraViewController : UIViewController
+@interface CameraViewController : UIViewController <UIGestureRecognizerDelegate, AVCaptureVideoDataOutputSampleBufferDelegate>
+{
+    
+    __weak IBOutlet UIView *previewView;
+    __weak IBOutlet UIImageView *boxView;
+    __weak IBOutlet UITextView *morseCode;
+    __weak IBOutlet UILabel *captrueLabel;
+    __weak IBOutlet UIImageView *startImage;
+    
+    AVCaptureSession *session;
+    AVCaptureVideoPreviewLayer *previewLayer;
+    AVCaptureVideoDataOutput *videoDataOutput;
+    dispatch_queue_t videoDataOutputQueue;
+    AVCaptureStillImageOutput *stillImageOutput;
+    CGFloat beginGestureScale;
+    CGFloat effectiveScale;
+    CGFloat lastRgb;
+    CGFloat variance;
+    
+}
+
+- (IBAction)handlePinchGesture:(UIPinchGestureRecognizer *)sender;
 
 @end
