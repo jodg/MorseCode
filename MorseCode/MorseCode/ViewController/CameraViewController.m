@@ -51,12 +51,6 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
 }
 
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -308,7 +302,7 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
     }
     u_long rgb = [self imageRefFromSampleBuffer:sampleBuffer];
 //    UIImage *rgb = [self imageRefFromSampleBuffer:sampleBuffer];
-    NSLog(@"rgb %lu",rgb);
+//    NSLog(@"rgb %lu",rgb);
     
     if (self.frist) {
         variance = rgb;
@@ -323,10 +317,10 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext = @"AVCap
     BOOL down = NO;
 //    NSLog(@"variance %f",variance);
     //判断是否有波动.若大于阀值.说明有波动.
-    if (abs(variance) > 300) {
+    if (fabs(variance) > 300) {
         //偏白色.开始接收有信号.
         //偏暗,开始等待信号.
-        NSLog(@"%f",variance);
+//        NSLog(@"%f",variance);
         if(variance> 0){
             down = YES;
         }else{

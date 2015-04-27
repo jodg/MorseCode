@@ -75,7 +75,7 @@
     
     self.fontSize = 14;
     self.lightFlag = NO;
-    self.appendLetter = YES;
+    self.appendLetter = NO;
     self.userText.delegate = self;
     self.morse.morseSpace = self.morseSpace;
     self.morse.textSpace = self.textSpace;
@@ -83,6 +83,13 @@
     [self.morse textToMorseCode];
     [self showMorseText];
     self.led = [[Led alloc]init];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [self resetLight];
+    [self resetLightView];
+    [super viewDidDisappear:animated];
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
@@ -138,7 +145,7 @@
         [self.lightView  setBackgroundColor:[UIColor blackColor]];
         [self.view addSubview:self.lightView];
         
-        [self.morse morseToLight:self selectorOn:@selector(changeLightViewImgOn) selectorOff:@selector(changeLightViewImgOff) selectorFinished:@selector(resetLightView) waitTime:4.0];
+        [self.morse morseToLight:self selectorOn:@selector(changeLightViewImgOn) selectorOff:@selector(changeLightViewImgOff) selectorFinished:@selector(resetLightView) waitTime:3.0];
     }
 }
 

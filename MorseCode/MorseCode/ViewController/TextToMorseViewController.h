@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 weibolabs. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ViewController.h"
 
-@interface TextToMorseViewController : UIViewController <UITextViewDelegate>
+@interface TextToMorseViewController : ViewController <UITextViewDelegate>
 
 -(void)changeLightImgOff;
 -(void)changeLightImgOn;

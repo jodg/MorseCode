@@ -19,17 +19,23 @@
 //关闭手电筒
 -(void) turnOffLed
 {
-    //    NSLog(@"off",nil);
-    [self.device lockForConfiguration:nil];
-    [self.device setTorchMode: AVCaptureTorchModeOff];
-    [self.device unlockForConfiguration];
+    [self switchLed:false];
 }
+
 //打开手电筒
 -(void) turnOnLed
 {
-    //    NSLog(@"on",nil);
+    [self switchLed:true];
+}
+
+-(void) switchLed:(bool) action
+{
     [self.device lockForConfiguration:nil];
-    [self.device setTorchMode:AVCaptureTorchModeOn];
+    if (action) {
+        [self.device setTorchMode:AVCaptureTorchModeOn];
+    }else{
+        [self.device setTorchMode: AVCaptureTorchModeOff];
+    }
     [self.device unlockForConfiguration];
 }
 

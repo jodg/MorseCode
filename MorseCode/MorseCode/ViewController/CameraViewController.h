@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 weibolabs. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
-@interface CameraViewController : UIViewController <UIGestureRecognizerDelegate, AVCaptureVideoDataOutputSampleBufferDelegate>
+@interface CameraViewController : ViewController <UIGestureRecognizerDelegate, AVCaptureVideoDataOutputSampleBufferDelegate>
 {
     
     __weak IBOutlet UIView *previewView;

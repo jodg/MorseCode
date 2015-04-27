@@ -11,6 +11,7 @@
 		C724B8971A68FA62005B1E8B /* Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = C724B8961A68FA62005B1E8B /* Camera.m */; };
 		C7C808AD1A885FBF00FDEE29 /* TextToMorseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C808AC1A885FBF00FDEE29 /* TextToMorseViewController.m */; };
 		C7C808B01A8876B000FDEE29 /* MorseToTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C808AF1A8876B000FDEE29 /* MorseToTextViewController.m */; };
+		C7CAE6BA1A9199DC002E8141 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7CAE6B91A9199DC002E8141 /* iAd.framework */; };
 		C7D84E1A1A43149A005510B0 /* MorseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D84E191A43149A005510B0 /* MorseViewController.m */; };
 		C7D84E1F1A43157A005510B0 /* Morse.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D84E1E1A43157A005510B0 /* Morse.m */; };
 		C7D84E221A43158F005510B0 /* Led.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D84E211A43158F005510B0 /* Led.m */; };
@@ -43,6 +44,7 @@
 		C7C808AC1A885FBF00FDEE29 /* TextToMorseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TextToMorseViewController.m; path = ViewController/TextToMorseViewController.m; sourceTree = "<group>"; };
 		C7C808AE1A8876B000FDEE29 /* MorseToTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MorseToTextViewController.h; path = ViewController/MorseToTextViewController.h; sourceTree = "<group>"; };
 		C7C808AF1A8876B000FDEE29 /* MorseToTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MorseToTextViewController.m; path = ViewController/MorseToTextViewController.m; sourceTree = "<group>"; };
+		C7CAE6B91A9199DC002E8141 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		C7D84E181A43149A005510B0 /* MorseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MorseViewController.h; path = ViewController/MorseViewController.h; sourceTree = "<group>"; };
 		C7D84E191A43149A005510B0 /* MorseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MorseViewController.m; path = ViewController/MorseViewController.m; sourceTree = "<group>"; };
 		C7D84E1D1A43157A005510B0 /* Morse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Morse.h; path = Model/Morse.h; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7CAE6BA1A9199DC002E8141 /* iAd.framework in Frameworks */,
 				C7D84E241A43164D005510B0 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,6 +127,7 @@
 		C7DFAD1A1A42B35C006A8283 = {
 			isa = PBXGroup;
 			children = (
+				C7CAE6B91A9199DC002E8141 /* iAd.framework */,
 				C7DFAD251A42B35C006A8283 /* MorseCode */,
 				C7DFAD3F1A42B35C006A8283 /* MorseCodeTests */,
 				C7DFAD241A42B35C006A8283 /* Products */,

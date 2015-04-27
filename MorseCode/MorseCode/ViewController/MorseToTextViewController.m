@@ -94,7 +94,9 @@
     self.morse.text = self.userText.text;
     [self.morse textToMorseCode];
     [self showMorseText];
+    
 }
+
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {

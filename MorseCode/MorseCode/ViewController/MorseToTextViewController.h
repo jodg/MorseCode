@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 weibolabs. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ViewController.h"
 
-@interface MorseToTextViewController : UIViewController <UITextViewDelegate>
+@interface MorseToTextViewController : ViewController <UITextViewDelegate>
 
 @end
